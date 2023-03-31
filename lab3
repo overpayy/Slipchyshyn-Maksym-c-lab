@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float time, dist, speed;
+    cout << "\nEnter time: ";
+    cin >> time;
+    cout << "\nEnter distant: ";
+    cin >> dist;
+    speed = dist / time;
+    cout << "\nSpeed = " << speed;
+    return 0;
+
+
+}
