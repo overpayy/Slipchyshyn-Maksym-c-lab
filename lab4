@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    float number, answer;
+    cout << "Enter the number: ";
+    cin >> number;
+    if (int(number) % 3 == 0) {
+        cout << "Yes";
+    }
+    else {
+        cout << "No";
+    }
+    return 0;
+}
