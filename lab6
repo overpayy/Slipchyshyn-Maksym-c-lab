@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+float calculateTotalCost(int quantity, float pricePerUnit) {
+    float totalCost = quantity * pricePerUnit;
+    return totalCost;
+}
+
+int main() {
+    int quantity;
+    float pricePerUnit;
+
+    cout << "Enter the quantity of the item: ";
+    cin >> quantity;
+
+    cout << "Enter the price per unit(UAH): ";
+    cin >> pricePerUnit;
+
+    float totalCost = calculateTotalCost(quantity, pricePerUnit);
+
+    cout << "The total cost is: UAH     " << totalCost << endl;
+
+    return 0;
+}
