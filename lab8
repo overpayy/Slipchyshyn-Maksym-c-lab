@@ -1,0 +1,31 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+
+std::string findShortestWord(const std::string& sentence) {
+    std::istringstream iss(sentence);
+    std::string word, shortestWord;
+    int shortestLength = std::numeric_limits<int>::max();
+
+    while (iss >> word) {
+        int wordLength = word.length();
+        if (wordLength < shortestLength) {
+            shortestLength = wordLength;
+            shortestWord = word;
+        }
+    }
+
+    return shortestWord;
+}
+
+int main() {
+    std::cout << "Enter text: ";
+    std::string input;
+    std::getline(std::cin, input);
+
+    std::string shortestWord = findShortestWord(input);
+
+    std::cout << "The shortest word: " << shortestWord << std::endl;
+
+    return 0;
+}
