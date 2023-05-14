@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+struct Student {
+    std::string lastName;
+    std::string firstName;
+    int birthYear;
+    std::string group;
+    int rating;
+    std::string gender;
+};
+
+int main() {
+    std::vector<Student> students;
+
+    // Введення даних про студентів
+    int numStudents;
+    std::cout << "Enter the number of students: ";
+    std::cin >> numStudents;
+
+    for (int i = 0; i < numStudents; i++) {
+        std::cout << "Student #" << (i + 1) << std::endl;
+
+        Student student;
+        std::cout << "Prizvushche: ";
+        std::cin >> student.lastName;
+        std::cout << "Name: ";
+        std::cin >> student.firstName;
+        std::cout << "Year of birth: ";
+        std::cin >> student.birthYear;
+        std::cout << "Group: ";
+        std::cin >> student.group;
+        std::cout << "Rating: ";
+        std::cin >> student.rating;
+        std::cout << "Sex: ";
+        std::cin >> student.gender;
+
+        students.push_back(student);
+    }
+
+    // Виведення прізвищ та ініціалів студентів з рейтингом менше 50 балів
+    std::cout << "Students with a rating of less than 50 points:" << std::endl;
+    for (const auto& student : students) {
+        if (student.rating < 50) {
+            std::cout << "Prizvushche: " << student.lastName << std::endl;
+            std::cout << "Initials: " << student.lastName[0] << ". " << student.firstName[0] << "." << std::endl;
+            std::cout << "---------------------------------------" << std::endl;
+        }
+    }
+
+    return 0;
+}
